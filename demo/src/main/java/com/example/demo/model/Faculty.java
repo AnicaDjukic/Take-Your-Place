@@ -20,11 +20,11 @@ public class Faculty {
 	@Column(name = "name", nullable = false)
 	private String name;
 	
-	@OneToMany(targetEntity = Room.class, cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
-    private Set<Room> rooms;
-	
 	@Embedded
 	private WorkingHours workingHours;
+	
+	@OneToMany(targetEntity = Room.class, cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
+    private Set<Room> rooms;
 	
 	public Faculty() {
 		super();
